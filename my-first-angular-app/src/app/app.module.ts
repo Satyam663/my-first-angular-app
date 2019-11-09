@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { TopnavComponent } from './home/topnav/topnav.component';
 import { CustomerRegisterComponent } from './home/customer-register/customer-register.component';
 import { LoginComponent } from './home/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { LoginComponent } from './home/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

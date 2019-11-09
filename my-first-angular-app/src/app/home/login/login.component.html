@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="container-fluid login-bar">
+                <div>
+                     <form  class="form-group"   action="">
+                            
+                         <div class="inp"><input type="text" class="form-control inp"[(ngModel)]="newUser.username" placeholder="Enter your username" name="abc"></div>
+                         <div class="inp1"><input type="password" class="form-control" [(ngModel)]="newUser.password" name="password" placeholder="Enter Password"></div>
+                         <div>
+                                <label for="exampleFormControlSelect1"></label>
+                                <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="newUser.role" name="selection" >
+                                <option>Admin</option>
+                                <option>Customer</option>
+                                </select>
+                        </div>
+                        <!-- <mat-form-field>
+                            <mat-label>Select an option</mat-label>
+                            <mat-select [(value)]="selected">
+                              <mat-option>None</mat-option>
+                              <mat-option value="option1">Option 1</mat-option>
+                              <mat-option value="option2">Option 2</mat-option>
+                              <mat-option value="option3">Option 3</mat-option>
+                            </mat-select>
+                          </mat-form-field> -->
+                        
+                         <div><button mat-raised-button (click)="login()" class="btn btn-primary">login</button></div>
+                         
+                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+
+    </div>
+</div>
+
