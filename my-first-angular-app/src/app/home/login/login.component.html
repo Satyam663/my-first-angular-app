@@ -4,13 +4,13 @@
         <div class="col-sm-4">
             <div class="container-fluid login-bar">
                 <div>
-                     <form  class="form-group"   action="">
+                     <form  [formGroup]="loginForm" class="form-group" (ngSubmit)="onSubmit()"   action="">
                             
-                         <div class="inp"><input type="text" class="form-control inp"[(ngModel)]="newUser.username" placeholder="Enter your username" name="abc"></div>
-                         <div class="inp1"><input type="password" class="form-control" [(ngModel)]="newUser.password" name="password" placeholder="Enter Password"></div>
+                         <div class="inp"><input type="text" class="form-control inp"formControlName="userid" placeholder="Enter your username" name="abc"></div>
+                         <div class="inp1"><input type="password" class="form-control" formControlName="password" name="password" placeholder="Enter Password"></div>
                          <div>
                                 <label for="exampleFormControlSelect1"></label>
-                                <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="newUser.role" name="selection" >
+                                <select class="form-control" id="exampleFormControlSelect1" formControlName="role" name="selection" >
                                 <option>Admin</option>
                                 <option>Customer</option>
                                 </select>
@@ -25,7 +25,7 @@
                             </mat-select>
                           </mat-form-field> -->
                         
-                         <div><button mat-raised-button (click)="login()" class="btn btn-primary">login</button></div>
+                         <div style="margin-top: 10px;"><button mat-raised-button (click)="login()" class="btn btn-primary">login</button></div>
                          
                      </form>
                 </div>
