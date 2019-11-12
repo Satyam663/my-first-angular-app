@@ -22,4 +22,9 @@ export class UserService {
     console.log((user))
     return (user);
   }
+  getRole(){
+    let role = sessionStorage.getItem('role')
+    console.log((role))
+    return (role);
+  }
 }

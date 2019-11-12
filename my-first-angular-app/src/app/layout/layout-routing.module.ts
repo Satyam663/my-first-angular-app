@@ -11,10 +11,10 @@ const routes: Routes = [
     path: "",
     component: LayoutComponent, 
     children: [
-      // {path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
-      {path: 'admin',component: AdminComponent},
-      {path: 'customer',component: CustomerComponent},
-      // {path: 'customer', loadChildren: './customer/customer.module#CustomerModule'}
+      {path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
+      // {path: 'admin',component: AdminComponent},
+      // {path: 'customer',component: CustomerComponent},
+      {path: 'customer', loadChildren: './customer/customer.module#CustomerModule'}
     ]
   }
 ];
