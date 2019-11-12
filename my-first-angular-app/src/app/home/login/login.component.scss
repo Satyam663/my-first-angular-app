@@ -1,10 +1,12 @@
 .main {
-    background-image: url('/assets/login-wallpaper.jpg');
+    // background-image: url('/assets/login-wallpaper.jpg');
+    background-image: url('../../../assets/top-nav.jpg');
     background-size: cover;
     height: 100%
 }
 .login-bar{
-    background-color: rgb(19, 99, 153);
+    // background-color: rgb(19, 99, 153);
+    background-image: url('../../../assets/top-nav.jpg');
 }
 .inp {
     margin-top: 100px;
