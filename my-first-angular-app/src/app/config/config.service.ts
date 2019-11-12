@@ -13,7 +13,7 @@ export class ConfigService {
          authenticateApi: '/authenticate',
 
          //customer related APIs
-         customersApi: '/customers',
+         customersApi: '/api/register',
        };
        return ({ "restApis": apis });
      }

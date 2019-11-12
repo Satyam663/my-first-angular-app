@@ -7,7 +7,7 @@ import { ApiDispatcherService } from './api-dispatcher.service';
 })
 export class AuthServiceService {
   private authUrl: string;
-  constructor(private config: ConfigService,private apiDispatcherService: ApiDispatcherService) {
+  constructor(private config: ConfigService, private apiDispatcherService: ApiDispatcherService) {
     const cfg =  this.config.getConfig();
     this.authUrl = cfg.restApis.authenticateApi;
    }

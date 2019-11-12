@@ -3,6 +3,7 @@ import { user } from 'src/app/model/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthServiceService} from '../../service/auth-service.service'
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
       role: new FormControl('',[Validators.required])
   });
   invalidLogin: boolean;
-  constructor(private router: Router, private authService: AuthServiceService) { 
+  constructor(private router: Router, private authService: AuthServiceService, private userservice: UserService) { 
     
 
   }
@@ -36,21 +37,28 @@ export class LoginComponent implements OnInit {
   // });
   if (this.authService.authenticate(this.loginForm.controls.userid.value, this.loginForm.controls.password.value , this.loginForm.controls.role.value)
   ) {
-    if(this.loginForm.controls.role.value === "Admin"){
-      this.router.navigate(['/layout/admin'])
-    alert('login successful');
-    this.invalidLogin = false;
-    } else {
-      this.router.navigate(['/layout/customer'])
-    alert('login successful');
-    this.invalidLogin = false;
-    }
+    if(this.loginForm.controls.role.value === ""){
+      alert('please enter the role');
+      this.userservice.logOut();
+      this.router.navigate(['/login'])
+
+    }else {
+          if(this.loginForm.controls.role.value === "Admin"){
+            this.router.navigate(['/layout/admin'])
+          alert('login successful');
+          this.invalidLogin = false;
+          } else {
+            this.router.navigate(['/layout/customer'])
+          alert('login successful');
+          this.invalidLogin = false;
+          }
     
-  } else{
-    this.invalidLogin = true;
-   alert('invalid credential');
-  }
- 
+      }
+     } else{
+            this.invalidLogin = true;
+          alert('invalid credential');
+          }
+
 }
 
 

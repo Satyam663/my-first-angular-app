@@ -10,13 +10,13 @@ const routes: Routes = [
   {
     path: "",
     component: AdminComponent, 
-    children: [
-      {path: 'addtransaction', component: AddTransactionComponent}
-    ]
+    // children: [
+    //   {path: 'add-transaction', component: AddTransactionComponent}
+    // ]
   },
-  // {
-  //   path: "add-transaction", component: AddTransactionComponent
-  // },
+  {
+    path: "add-transaction", component: AddTransactionComponent
+  },
   {
     path: "all-transaction", component: AllTransactionComponent
   },
