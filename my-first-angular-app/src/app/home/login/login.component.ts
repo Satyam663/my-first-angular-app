@@ -36,9 +36,16 @@ export class LoginComponent implements OnInit {
   // });
   if (this.authService.authenticate(this.loginForm.controls.userid.value, this.loginForm.controls.password.value , this.loginForm.controls.role.value)
   ) {
-    this.router.navigate(['\layout'])
+    if(this.loginForm.controls.role.value === "Admin"){
+      this.router.navigate(['/layout/admin'])
     alert('login successful');
     this.invalidLogin = false;
+    } else {
+      this.router.navigate(['/layout/customer'])
+    alert('login successful');
+    this.invalidLogin = false;
+    }
+    
   } else{
     this.invalidLogin = true;
    alert('invalid credential');
