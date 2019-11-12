@@ -1,14 +1,15 @@
 
-    .nav {
-        background-color:rgb(255, 0, 140);
+    .nav  {
+        //background-color:rgb(255, 0, 140);
         height: 80px;
+        background-image: url('../../../assets/top-nav.jpg');
     }
     ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: rgb(255, 0, 140);
+        //background-color: rgb(255, 0, 140);
       }
       
       li {
@@ -25,10 +26,15 @@
       
       /* Change the link color to #111 (black) on hover */
       li a:hover {
-        background-color: rgb(240, 14, 14);
+       // background-color: rgb(41, 39, 39);
+        background-image: url('../../../assets/top-nav.jpg');
+        font-size: 25px;
+        height: 80px;
       }
       .active {
         background-color: rgb(240, 14, 14);
       }
 
-      
+      .topnav {
+        background-image: url('../../../assets/top-nav.jpg');
+      }

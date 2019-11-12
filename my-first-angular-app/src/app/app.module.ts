@@ -8,6 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { TopnavComponent } from './home/topnav/topnav.component';
 import { CustomerRegisterComponent } from './home/customer-register/customer-register.component';
 import { LoginComponent } from './home/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiDispatcherService } from './service/api-dispatcher.service';
+import { ConfigService } from './config/config.service';
+import { AuthServiceService } from './service/auth-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import { UserService } from './service/user.service';
+
 
 @NgModule({
   declarations: [
@@ -15,14 +23,20 @@ import { LoginComponent } from './home/login/login.component';
     HomeComponent,
     TopnavComponent,
     CustomerRegisterComponent,
-    LoginComponent
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    MatButtonModule
+    
   ],
-  providers: [],
+  providers: [ApiDispatcherService,ConfigService,AuthServiceService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

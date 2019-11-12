@@ -30,3 +30,4 @@ commands used in this project---------
 1.ng new my-new-app
 2.ng add @angular/material
 3.npm install bootstrap --save
+4.ng g module layout --routing

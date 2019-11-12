@@ -2,18 +2,22 @@
 <div class="container-fluid">
     <div class="row nav">
         <div class="col-sm-8">
-            <div style="padding:20px"><h3>khata-app</h3></div>
+            <div style="padding:20px; color: antiquewhite; "><h3>khata-app</h3></div>
             
         </div>
         <div class="col-sm-4">
             <div class="topnav" >
                 <ul style="list-style: none;" id="mat-nav-list">
-                    <li><a href="/layout/home" >Home</a></li>
+                    <li><a href="/home" >Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="">Contact</a></li>
-                    <li><a href="/layout/register">Register</a></li>
-                    <li><a href="/layout/login">login</a></li>                      
+                    <li *ngIf="!_userService.isUserLoggedIn()"><a href="/register">Register</a></li>
+                    <li *ngIf="!_userService.isUserLoggedIn()"><a href="/login">login</a></li>   
+                    <li *ngIf="_userService.isUserLoggedIn()"> <a [routerLink]="" (click)="logout()">logout</a></li>   
+                    <li *ngIf="_userService.isUserLoggedIn()"><button style="margin-top: 10px;" mat-fab color="blue">{{admin}}</button></li> 
+                                 
                 </ul>
+                
             </div>
         </div>
     </div>
