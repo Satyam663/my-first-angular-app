@@ -56,9 +56,11 @@
         <div class="col-sm-4 myd">
                 <h5 style="margin-top: 10px;" >Add a transaction</h5>
               <form class="example-form frm">
-                    <!-- < <mat-form-field class="example-full-width">
-                    <input matInput placeholder="" value="">
-                    </mat-form-field> -->
+                    <div>
+                            <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Name" value="">
+                            </mat-form-field> 
+                    </div> 
                     <div class="frm1">
                         <mat-label>Item Name</mat-label>
                         <mat-select #fontSize value="Wheat" (selectionChange)="triggerResize()">

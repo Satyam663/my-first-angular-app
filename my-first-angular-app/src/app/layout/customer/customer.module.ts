@@ -7,7 +7,7 @@ import { CustomerComponent } from './customer.component';
 import { MakeTransactionComponent } from './make-transaction/make-transaction.component';
 import { MyTransactionComponent } from './my-transaction/my-transaction.component';
 import { PayTransactionComponent } from './pay-transaction/pay-transaction.component';
-import { MatTableModule, MatPaginatorModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatNativeDateModule, MatSelectModule, MatDatepickerModule, MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -16,7 +16,14 @@ import { MatTableModule, MatPaginatorModule } from '@angular/material';
     CommonModule,
     CustomerRoutingModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule
+    ,MatSelectModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatButtonModule
   ]
 })
 export class CustomerModule { }
