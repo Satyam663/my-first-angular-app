@@ -20,8 +20,10 @@
         display: block;
         color: white;
         text-align: center;
-        padding: 28px 16px;
+        padding: 19px 16px;
         text-decoration: none;
+        opacity: .6;
+        height: 80px;
       }
       
       /* Change the link color to #111 (black) on hover */
@@ -30,6 +32,7 @@
         background-image: url('../../../assets/top-nav.jpg');
         font-size: 25px;
         height: 80px;
+        opacity: 1.5;
       }
       .active {
         background-color: rgb(240, 14, 14);
