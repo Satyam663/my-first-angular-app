@@ -14,7 +14,7 @@
                     <li *ngIf="!_userService.isUserLoggedIn()"><a href="/register">Register</a></li>
                     <li *ngIf="!_userService.isUserLoggedIn()"><a href="/login">login</a></li>   
                     <li *ngIf="_userService.isUserLoggedIn()"> <a [routerLink]="" (click)="logout()">logout</a></li>   
-                    <li *ngIf="_userService.isUserLoggedIn()"><button style="margin-top: 10px;" mat-fab color="blue">{{admin}}</button></li> 
+                    <li *ngIf="_userService.isUserLoggedIn()"> <a href="/layout"><button  mat-fab >{{admin}}</button></a> </li> 
                                  
                 </ul>
                 

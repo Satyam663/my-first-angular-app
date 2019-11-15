@@ -6,6 +6,7 @@ import { LayoutComponent } from './layout.component';
 import { CustomerComponent } from './customer/customer.component';
 import { AdminComponent } from './admin/admin.component';
 import { SharedBarComponent } from './shared-bar/shared-bar.component';
+import { MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { SharedBarComponent } from './shared-bar/shared-bar.component';
   imports: [
     CommonModule,
     LayoutRoutingModule,
+    MatButtonModule
     
   ]
 })

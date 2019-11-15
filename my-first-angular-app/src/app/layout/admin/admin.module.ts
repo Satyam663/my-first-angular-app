@@ -6,13 +6,24 @@ import { AdminComponent } from './admin.component';
 import { AllCustomerComponent } from './all-customer/all-customer.component';
 import { AllTransactionComponent } from './all-transaction/all-transaction.component';
 import { AddTransactionComponent } from './add-transaction/add-transaction.component';
-
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [AdminComponent, AllCustomerComponent, AllTransactionComponent, AddTransactionComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule
+    ,MatSelectModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatButtonModule
   ]
 })
 export class AdminModule { }
