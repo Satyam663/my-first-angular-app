@@ -9,9 +9,10 @@ import { AddTransactionComponent } from './add-transaction/add-transaction.compo
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
+import { RemarkspipePipe } from 'src/app/shared/pipe/remarkspipe.pipe';
 
 @NgModule({
-  declarations: [AdminComponent, AllCustomerComponent, AllTransactionComponent, AddTransactionComponent],
+  declarations: [AdminComponent, AllCustomerComponent, AllTransactionComponent, AddTransactionComponent ,RemarkspipePipe,],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -24,6 +25,8 @@ import {MatInputModule} from '@angular/material/input';
     MatNativeDateModule,
     MatDatepickerModule,
     MatButtonModule
-  ]
+    
+  ],
+  
 })
 export class AdminModule { }

@@ -1,33 +1,33 @@
-<div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource">
-  
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-  
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container>
-  
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[20]" showFirstLastButtons></mat-paginator>
-  </div>
+<div class="container-fluid">
+    <div *ngIf="true" class="active-pink-3 active-pink-4 mb-4" style="margin-top: 20px;">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="term">
+      </div>
+  <table >
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Weight</th>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Paid Status</th>
+          <th>Remarks</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+      <tr *ngFor="let trans of elements1 |filter:term |searchpipe">
+        <td>{{trans.id}}</td>
+        <td>{{trans.name}}</td>
+        <td>{{trans.date}}</td>
+        <td>{{trans.weight}}</td>
+        <td>{{trans.item}}</td>
+        <td>{{trans.price}}</td>
+        <td>{{trans.paid}}</td>
+        <td >{{trans.remark  }} <a *ngIf="trans.remark.length > 20  && !checkMe(trans)"  (click)="showMoreText(trans)" style="font-size: 10px; cursor: pointer; color: blue;">showMore</a><a *ngIf="trans.remark.length > 20  &&checkMe(trans)"  (click)="showlesstext(trans)" style="font-size: 10px; cursor: pointer; color: blue;">showless</a></td>
+        <!-- <a *ngIf="trans.remark.length > 20" (click)="showMoreText(trans)" style="font-size: 10px; cursor: pointer; color: blue;">{{togglePipe ? "Show More" : "Show Less"}}</a> -->
+      </tr>
+   </tbody>
+  </table>
+</div>

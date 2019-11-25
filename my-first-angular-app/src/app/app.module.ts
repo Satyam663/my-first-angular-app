@@ -15,6 +15,10 @@ import { AuthServiceService } from './service/auth-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import { UserService } from './service/user.service';
+import { RemarkspipePipe } from './shared/pipe/remarkspipe.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SearchpipePipe } from './shared/pipe/searchpipe.pipe';
+
 
 
 @NgModule({
@@ -24,6 +28,9 @@ import { UserService } from './service/user.service';
     TopnavComponent,
     CustomerRegisterComponent,
     LoginComponent,
+   
+    
+   
     
   ],
   imports: [
@@ -33,9 +40,11 @@ import { UserService } from './service/user.service';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MatButtonModule
-    
-  ],
+    MatButtonModule,
+    Ng2SearchPipeModule
+  ]
+  // ,exports:[RemarkspipePipe]
+  ,
   providers: [ApiDispatcherService,ConfigService,AuthServiceService, UserService],
   bootstrap: [AppComponent]
 })

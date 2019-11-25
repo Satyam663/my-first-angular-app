@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class TopnavComponent implements OnInit {
   a = false;
   admin = "";
+  term: string;
   constructor(private _router: Router, private _userService :UserService) { }
 
   ngOnInit() {

@@ -1,12 +1,16 @@
 <!-- topNav Header -->
 <div class="container-fluid">
     <div class="row nav">
-        <div class="col-sm-8">
+        <div class="col-sm-4">
             <div style="padding:20px; color: antiquewhite; "><h3>khata-app</h3></div>
+            
             
         </div>
         <div class="col-sm-4">
-            <div class="topnav" >
+               
+        </div>
+        <div class="col-sm-4">
+            <div class="topnav container-fluid" >
                 <ul style="list-style: none;" id="mat-nav-list">
                     <li><a href="/home" >Home</a></li>
                     <li><a href="#">About</a></li>
@@ -15,6 +19,7 @@
                     <li *ngIf="!_userService.isUserLoggedIn()"><a href="/login">login</a></li>   
                     <li *ngIf="_userService.isUserLoggedIn()"> <a [routerLink]="" (click)="logout()">logout</a></li>   
                     <li *ngIf="_userService.isUserLoggedIn()"> <a href="/layout"><button  mat-fab >{{admin}}</button></a> </li> 
+                    
                                  
                 </ul>
                 
