@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-all-customer',
@@ -8,47 +9,33 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./all-customer.component.scss']
 })
 export class AllCustomerComponent implements OnInit {
-  displayedColumns: string[] = ['userName', 'name', 'mobileNumber', 'address'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-
+  toggle: boolean= true;
+  elements: any[]
+  arr : any[]
+  
+  start=0
+  end=50
+  constructor(private user:UserService){
+    
+}
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+    this.user.customerall().subscribe((data: any) =>{   
+    data.forEach(element => {
+    //  element.body= element.body.substring(0, 20) + '...' ;
+    });
+    this.elements = data
+    });
+
+    
+}
+showlesstext(trans){
+this.toggle = true
+this.end = 50
+}
+showmoretext(trans){
+  this.toggle = false
+ this.end =200;
+}
 }
 
-export interface PeriodicElement {
-  name: string;
-  userName: string;
-  mobileNumber: number;
-  address: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {userName: "saurabh", name: 'sourabh', mobileNumber: 2564123, address: 'khandwa'},
-  {userName: "Atul", name: 'atlya', mobileNumber: 562459, address: 'pune'},
-  {userName: "mitra", name: 'sourabhm', mobileNumber: 542564123, address: 'bengaluru'},
-  {userName: "ashsis", name: 'manjee', mobileNumber: 25745745, address: 'ranchi'},
-  {userName: "supriya", name: 'riya', mobileNumber: 2564187523, address: 'jhelum'},
-  {userName: "saurabh", name: 'sourabh', mobileNumber: 2564123, address: 'khandwa'},
-  {userName: "Atul", name: 'atlya', mobileNumber: 562459, address: 'pune'},
-  {userName: "mitra", name: 'sourabhm', mobileNumber: 542564123, address: 'bengaluru'},
-  {userName: "ashsis", name: 'manjee', mobileNumber: 25745745, address: 'ranchi'},
-  {userName: "supriya", name: 'riya', mobileNumber: 2564187523, address: 'jhelum'},
-  {userName: "saurabh", name: 'sourabh', mobileNumber: 2564123, address: 'khandwa'},
-  {userName: "Atul", name: 'atlya', mobileNumber: 562459, address: 'pune'},
-  {userName: "mitra", name: 'sourabhm', mobileNumber: 542564123, address: 'bengaluru'},
-  {userName: "ashsis", name: 'manjee', mobileNumber: 25745745, address: 'ranchi'},
-  {userName: "supriya", name: 'riya', mobileNumber: 2564187523, address: 'jhelum'},
-  {userName: "saurabh", name: 'sourabh', mobileNumber: 2564123, address: 'khandwa'},
-  {userName: "Atul", name: 'atlya', mobileNumber: 562459, address: 'pune'},
-  {userName: "mitra", name: 'sourabhm', mobileNumber: 542564123, address: 'bengaluru'},
-  {userName: "ashsis", name: 'manjee', mobileNumber: 25745745, address: 'ranchi'},
-  {userName: "supriya", name: 'riya', mobileNumber: 2564187523, address: 'jhelum'},
-  {userName: "saurabh", name: 'sourabh', mobileNumber: 2564123, address: 'khandwa'},
-  {userName: "Atul", name: 'atlya', mobileNumber: 562459, address: 'pune'},
-  {userName: "mitra", name: 'sourabhm', mobileNumber: 542564123, address: 'bengaluru'},
-  {userName: "ashsis", name: 'manjee', mobileNumber: 25745745, address: 'ranchi'},
-  {userName: "supriya", name: 'riya', mobileNumber: 2564187523, address: 'jhelum'},
-];

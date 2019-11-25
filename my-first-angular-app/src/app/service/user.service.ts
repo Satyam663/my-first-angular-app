@@ -7,10 +7,11 @@ import { ConfigService } from '../config/config.service';
 })
 export class UserService {
   authUrl: string;
-
+  authUrl2: string;
   constructor(private apidispatcher : ApiDispatcherService, private config: ConfigService) {
     const cfg =  this.config.getConfig();
     this.authUrl = cfg.restApis.customersApi;
+    this.authUrl2=cfg.restApis.testApi;
    }
 
   isUserLoggedIn() {
@@ -49,5 +50,8 @@ export class UserService {
 
 CustomerRegistration(user){
 return this.apidispatcher.doPostApiCall(this.authUrl, user);
+}
+customerall(){
+  return this.apidispatcher.doGetApiCall(this.authUrl2);
 }
 }

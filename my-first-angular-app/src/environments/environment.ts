@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  appApiurl: 'http://localhost:3000'
+  //appApiurl: 'http://localhost:3000'
+  appApiurl: 'https://jsonplaceholder.typicode.com'
 };
 
 /*

@@ -6,16 +6,16 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 })
 export class RemarkspipePipe implements PipeTransform {
 
-  transform(value: string, togglePipe:boolean,names:any[] ,name:any): any {
+  transform(value: string, toggle:boolean,remarks:any[] ): any {
         
-        if(value.length > 20 && !names.includes(value)){
+        if(value.length > 20 && toggle){
               return value.substring(0, 20)+'...' ;
         }
-      else if(names.includes(value)) {
-              return value;
-      }
+      // else if(remarks.includes(value)) {
+      //         return value;
+      // }
       else {
-        return value.substring(0, 20)+'...' ;
+              return value
       }
       
      

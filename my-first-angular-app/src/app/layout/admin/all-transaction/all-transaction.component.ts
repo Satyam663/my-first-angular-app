@@ -9,8 +9,8 @@ import { ReturnStatement } from '@angular/compiler';
 export class AllTransactionComponent implements OnInit {
   togglePipe: boolean = true;
   showMore: boolean = true;
-  remarks:string[];
-  names: string[]=[""];
+ // remarks:string[];
+  remarks: string[]=[""];
   name:string;
   elements: PeriodicElement[]
   constructor(){
@@ -49,17 +49,17 @@ export class AllTransactionComponent implements OnInit {
 showMoreText(trans){
   this.togglePipe = !this.togglePipe;
   this.name = trans.remark;
-  this.names.push(trans.remark)
+  this.remarks.push(trans.remark)
   
 }
 showlesstext(trans){
   this.togglePipe = !this.togglePipe;
-var removeindex = this.names.indexOf(trans.remark)
-this.names.splice(removeindex, 1);
+var removeindex = this.remarks.indexOf(trans.remark)
+this.remarks.splice(removeindex, 1);
 }
 checkMe(trans){
   //return true if id is present in array
- return this.names.includes(trans.remark)
+ return this.remarks.includes(trans.remark)
 }
 }
 

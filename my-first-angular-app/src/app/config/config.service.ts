@@ -14,6 +14,7 @@ export class ConfigService {
 
          //customer related APIs
          customersApi: '/api/register',
+         testApi: '/comments'
        };
        return ({ "restApis": apis });
      }
