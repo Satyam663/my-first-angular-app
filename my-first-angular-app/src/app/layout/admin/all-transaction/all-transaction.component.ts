@@ -10,7 +10,7 @@ export class AllTransactionComponent implements OnInit {
   togglePipe: boolean = true;
   showMore: boolean = true;
   remarks:string[];
-  names: string[];
+  names: string[]=[""];
   name:string;
   elements: PeriodicElement[]
   constructor(){
@@ -50,24 +50,16 @@ showMoreText(trans){
   this.togglePipe = !this.togglePipe;
   this.name = trans.remark;
   this.names.push(trans.remark)
-  // if(this.remarks && this.remarks.length){
-  //   //array is not empty we will check whethher the comment is present or not
-  //   if(this.remarks.includes(trans.remark)){
-  //     console.log("remark is present")
-  //     return;
-  //   }else{
-  //     this.remarks.push(trans.remark)
-  //   }
-
-  // }else{
-  //   //array is empty
-  //   this.remarks.push(trans.remark);
-  // }
+  
 }
 showlesstext(trans){
-var removeindex = this.remarks.map(function(trans){
-  return this.trans.remark}).indexOf(trans.remark);
-this.remarks.splice(removeindex, 1);
+  this.togglePipe = !this.togglePipe;
+var removeindex = this.names.indexOf(trans.remark)
+this.names.splice(removeindex, 1);
+}
+checkMe(trans){
+  //return true if id is present in array
+ return this.names.includes(trans.remark)
 }
 }
 

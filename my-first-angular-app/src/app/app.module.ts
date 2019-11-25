@@ -18,6 +18,7 @@ import { UserService } from './service/user.service';
 import { RemarkspipePipe } from './shared/pipe/remarkspipe.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SearchpipePipe } from './shared/pipe/searchpipe.pipe';
+import { ShowpipePipe } from './shared/pipe/showpipe.pipe';
 
 
 
@@ -28,6 +29,7 @@ import { SearchpipePipe } from './shared/pipe/searchpipe.pipe';
     TopnavComponent,
     CustomerRegisterComponent,
     LoginComponent,
+    
    
     
    

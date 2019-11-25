@@ -10,9 +10,10 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import { RemarkspipePipe } from 'src/app/shared/pipe/remarkspipe.pipe';
+import { ShowpipePipe } from 'src/app/shared/pipe/showpipe.pipe';
 
 @NgModule({
-  declarations: [AdminComponent, AllCustomerComponent, AllTransactionComponent, AddTransactionComponent ,RemarkspipePipe,],
+  declarations: [AdminComponent, AllCustomerComponent, AllTransactionComponent, AddTransactionComponent ,RemarkspipePipe, ShowpipePipe,],
   imports: [
     CommonModule,
     AdminRoutingModule,

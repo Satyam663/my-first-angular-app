@@ -21,8 +21,9 @@
         <td>{{trans.item}}</td>
         <td>{{trans.price}}</td>
         <td>{{trans.paid}}</td>
-        <td >{{trans.remark | remarkspipe:togglePipe: name:names }}<a *ngIf="trans.remark.length > 20" (click)="showMoreText(trans)" style="font-size: 10px; cursor: pointer; color: blue;">{{togglePipe ? "Show More" : "Show Less"}}</a></td>
+        <td >{{trans.remark | remarkspipe: togglePipe: names : name}} <a *ngIf="trans.remark.length > 20  && !checkMe(trans)"  (click)="showMoreText(trans)" style="font-size: 10px; cursor: pointer; color: blue;">showMore</a><a *ngIf="trans.remark.length > 20  &&checkMe(trans)"  (click)="showlesstext(trans)" style="font-size: 10px; cursor: pointer; color: blue;">showless</a></td>
         <!-- <a *ngIf="trans.remark.length > 20" (click)="showMoreText(trans)" style="font-size: 10px; cursor: pointer; color: blue;">{{togglePipe ? "Show More" : "Show Less"}}</a> -->
+        <!--  -->
       </tr>
    </tbody>
   </table>
